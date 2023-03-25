@@ -1,20 +1,126 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-<head>    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title></title>
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0
-        }
-  </style> 
-  </head>
-<body>
-<svg style='background:#afa'> 
-  <circle cx='10' cy='10' r='10' style='fill:red;stroke:black' />
-    <rect x='5' y='5' width='290' height='140' stroke:blue;fill:none' /> 
-  </svg>
-  </body>
+        * { box-sizing: border-box; margin:0 }
+
+        body { margin: 0; font-family: Arial; }
+        .pagina {display: grid; max-width: 1600px; min-height:99vh; margin: auto; gap: 0; grid-template-columns: 100px 1fr; grid-template-rows: 50px 1fr 50px ;  }
+        .header { text-align: center; padding: 5px; border-bottom:solid 3px green; background-color:#efe; margin:0; grid-column:span 2;max-height:100px}
+        .row { display: flex; flex-wrap: wrap; padding: 0 4px; align-content:stretch}
+
+        /* Create four equal columns that sits next to each other */
+        .column { flex: 25%; max-width: 25%; padding: 0 4px; align-content:space-around}
+        .column img { margin-top: 1rem; vertical-align: middle;  }
+
+        /* Responsive layout - makes a two column-layout instead of four columns */
+        @media screen and (max-width: 800px) { .column { flex: 50%; max-width: 50%; } }
+
+        /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 600px) { .column { flex: 100%; max-width: 100%; } .side {width:0px} 
+    .pagina {display: grid; max-width: 1600px; min-height:99vh; margin: auto; gap: 0; grid-template-columns: 1fr; grid-template-rows: 50px 1fr 50px ;  }
+    .side {display:none}}
+    .side svg{cursor:pointer} .side svg:hover{background-color:#cfc}
+    .sect_h { border-top: solid 1px red; background-color: #fee; padding: 2em; margin-top: 1rem; }
+    .post {border-top:solid 1px grey; background-color:#eee; padding:2em; margin-top: 1rem;}
+    .post:first-of-type{background-color:#dfd; }
+    .foto {border-top:solid 1px grey; background-color:#eee; margin-top:1rem}
+    .foto img {margin:0}
+    .foto p {padding:0.5rem 1rem; font-size:.7em}
+    .footer{ text-align:right; font:bold 10px verdana; border-top:solid 3px green; color:darkgreen; grid-column:span 2; background-color: #efe; }
+    .fb_post {   border-top:solid 1px grey; background-color:#eee; padding:1em; margin-top: 1rem;}
+    .fb_post header {margin-bottom:6px }
+    .fb_post header img {border-radius:100%;width:25px;height:25px;float:left;margin:0}
+    .fb_post h3 { font:bold 1em verdana; margin:0 40px }
+    .fb_post h4 { font:normal 0.7em calibri; border-bottom:solid 3px lightgrey; margin:0  40px}
+    .fb_post h5 { font:normal 0.8em verdana; margin:4px; }
+        .quote {min-height:160px ; border-top:solid 3px green;position:relative;overflow:hidden; background:navy; color:white;text-align:center; padding:3rem 0; font:normal 16px cursive;}
+        .quote:before {content:" "; font:bold 40px cursive; padding:120px; border-radius:100%; background:white; position:absolute; top:-120px; left:-90px;opacity:.3 }
+        .quote:after{content:" ";padding:160px; border-radius:100%; background:lightgrey; position:absolute; top:20px; left:-90px; opacity:.2}
+    </style>
+    </head>
+    <body>
+
+        <!-- Header -->
+
+        <div class="pagina" style=" ">
+            <div class="header">
+                <h1> Localhost web page </h1>
+            </div>
+            <div class="side" style="width: 100px; text-align: center; padding: 5px; border-right: solid 3px green; background-color: #efe; margin: 0; border-radius: 0; ">
+                <svg viewBox="0 0 100 100" width="100%" style="background-color:none">
+                    <polygon points="25,25 75,50 25,75" fill="darkgreen"></polygon>
+                </svg>
+                <svg viewBox="0 0 100 100" width="100%" style="background-color:none">
+                    <polygon points="25,25 25,75 45,75 45,25 " fill="darkgreen" />
+                    <polygon points="55,25 55,75 75,75 75,25 " fill="darkgreen" />
+                </svg>
+                <svg viewBox="0 0 100 100" width="100%" style="background-color:none">
+                    <polygon points="30,30 30,70 70,70 70,30 " fill="darkgreen" />
+                </svg>
+                <svg viewBox="0 0 100 100" width="100%" style="background-color:none">
+                    <g style="stroke:darkgreen;stroke-width:20">
+                    <line x1="25" y1="50" x2="75" y2="50"  />
+                    <line x1="50" y1="25" x2="50" y2="75" />
+                </svg>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <div class="sect_h">
+                        <h3>Ciao</h3>
+                        <p> This page is located in my new computer </p>
+                    </div>
+                    <div class="foto"><img src="img/23010.jpg" style="width:100%"><p class="">Welcome to Shoreham Beach</p></div>
+                    <div class="post"> I'll be adding some new photos now and then, so... stay tuned.  </div>
+                    <div class="foto"><img src="img/23009.jpg" style="width:100%"><p style="margin-top:-65px;text-align:center">You don't need much to be a Leader: <br /> just move to the right direction <br /> and the others will follow</p></div>
+                </div>
+
+                <div class="column">
+                    <div class="sect_h"><h3> My websites </h3> I built a few websites  </div>
+                    <div class="foto"><img src="img/23003.jpg" style="width:100%"><p class="">Didascalia</p></div>
+                    <div class="quote"> Being Italian is a tough job, <br /> but someone has to do it  </div>
+                    <div class="foto"><img src="img/23004.jpg" style="width:100%"><p class="">Didascalia</p></div>
+                    <div class="fb_post"><header>
+                        <img src="img/23004.jpg" style=""/>
+                        <h3>Giovanni Salvati</h3><h4>3 giorni fa</h4></header><h5>Al mondo ci sono due categorie di persone: <br /> quelli che dividono il mondo in due categoerie <br /> e quelli che non lo fanno  </h5><hr /><h5>You can divide people into two categories: <br /> those who divide people into two categories <br /> and those who don't </h5></div>
+
+                </div>
+
+                <div class="column">
+                    <div class="sect_h"><h3> Javascript Playground </h3> I enjoy writing some code </div>
+                    <img src="img/23005.jpg" style="width:100%">
+                    <div class="post"> Testo testo testo </div>
+                    <img src="img/23006.jpg" style="width:100%">
+                    <div class="post"> <video id="webcam" autoplay style="width:100%" ></video> </div>
+                </div>
+
+                <div class="column">
+                    <div class="sect_h"><h3> Photo Album  </h3> I'm fond of photography  </div>
+                    <div class="post"> Testo testo testo </div>
+                    <img src="img/23007.jpg" style="width:100%">
+                    <div class="post"> Testo testo testo </div>
+                    <img src="img/23008.jpg" style="width:100%">
+                    <div class="post"> Testo testo testo </div>
+                </div>
+            </div>
+            <div class="footer">
+                <p>Footer</p>
+            </div>
+
+        </div>
+        <script>
+            const constraints = { audio: false, video: { facingmode: "user", width: { min: 720, max: 1200 }, heigth: { min: 480, max: 900 } } };
+            let video = document.querySelector("#webcam");
+            navigator.mediaDevices.getUserMedia(constraints)
+                .then(function (mediaStreamObj) {  
+                    if ("srcObject" in video) { video.srcObject = mediaStreamObj; }
+                    else { video.src = window.URL.createObjectURL(mediaStreamObj) }})
+                .catch(function (err) { console.log(err.name, err.message);video.parentElement.style.display = 'none' })
+        </script>
+
+    </body>
 </html>
